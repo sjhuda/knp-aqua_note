@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="GenusNoteRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\GenusNoteRepository")
  * @ORM\Table(name="genus_note")
  */
 class GenusNote {
@@ -38,7 +38,7 @@ class GenusNote {
   private $createdAt;
 
   /**
-   * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Genus")
+   * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Genus", inversedBy="notes")
    * @\Doctrine\ORM\Mapping\JoinColumn(nullable=false)
    */
   private $genus;
